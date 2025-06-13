@@ -1,11 +1,11 @@
 services:
   db:
     image: mariadb:10.5
-    container_name: sincsuite-db
+    container_name: 
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Wcore@32101234
-      MYSQL_DATABASE: sinc_videos
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
     ports:
       - "3306:3306"
     volumes:
@@ -15,7 +15,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: sincsuite-backend
+    container_name: 
     restart: always
     ports:
       - "8000:8000"
