@@ -1,0 +1,59 @@
+# -----------------------
+# FRONTEND (React / Node)
+# -----------------------
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Environment
+.env.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# -----------------------
+# BACKEND (Python / FastAPI)
+# -----------------------
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite DBs
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+
+# -----------------------
+# Docker (opcional)
+# -----------------------
+
+# Docker-related ignore rules (if any build context includes local files)
+docker-compose.override.yml
