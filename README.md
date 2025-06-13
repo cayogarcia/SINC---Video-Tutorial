@@ -1,1 +1,1 @@
-# SINC---Video-Tutorial
+# SINC - Video-Tutorial
