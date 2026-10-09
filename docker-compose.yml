@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mariadb:10.5
+    container_name: sincsuite-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Wcore@32101234
+      MYSQL_DATABASE: sinc_videos
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sincsuite-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+
+  frontend:
+    image: nginx:latest
+    container_name: sincsuite-frontend
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
